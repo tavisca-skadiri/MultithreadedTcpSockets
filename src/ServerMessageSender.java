@@ -6,14 +6,23 @@ import java.nio.file.Files;
 
 public class ServerMessageSender extends Thread {
     private PrintWriter dataOut;
-    public ServerMessageSender(PrintWriter dataOut) {
+    File file;
+    public ServerMessageSender(PrintWriter dataOut, String filename) {
         this.dataOut = dataOut;
+        if(filename.isEmpty()){
+            file = new File("error.html");
+        }
+        else {
+            file = new File(filename);
+        }
+        if(!file.exists()){
+            file = new File("error.html");
+        }
     }
     @Override
     public void run() {
-        String filename="index.html";
         try {
-            InputStream inputStreamReader = new FileInputStream(filename);
+            InputStream inputStreamReader = new FileInputStream(file.getName());
             byte[] b=new byte[inputStreamReader.available()];
             inputStreamReader.read(b);
             dataOut.print(new String(b));
