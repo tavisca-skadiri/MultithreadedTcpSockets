@@ -13,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RequestHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ResponseHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ServerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RequestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RequestTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,7 +102,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/RequestTest.java">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="14">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -147,8 +150,6 @@
         <option value="$PROJECT_DIR$/src/main/java/RequestHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ResponseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/Connection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/RequestParser.java" />
-        <option value="$PROJECT_DIR$/src/test/java/RequestTest.java" />
       </list>
     </option>
   </component>
@@ -178,18 +179,6 @@
               <item name="MultithreadedTcpSockets" type="b2602c69:ProjectViewProjectNode" />
               <item name="MultithreadedTcpSockets" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MultithreadedTcpSockets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MultithreadedTcpSockets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MultithreadedTcpSockets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MultithreadedTcpSockets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -374,6 +363,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/RequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ResponseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -391,27 +392,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/RequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/RequestParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/RequestTest.java">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

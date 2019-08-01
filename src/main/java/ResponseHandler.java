@@ -1,15 +1,14 @@
-
-import java.io.*;
-
-public class ResponseHandler extends Thread {
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+public class ResponseHandler{
     private final PrintWriter dataOut;
     private File file;
     ResponseHandler(PrintWriter dataOut, String filename) {
         this.dataOut = dataOut;
         this.file = new File(filename);
     }
-    @Override
-    public void run() {
+    void sendResponse() {
         try(dataOut) {
             String fileContent = FileUtils.readFile(file);
             dataOut.print(fileContent);
