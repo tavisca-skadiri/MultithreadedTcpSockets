@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -17,6 +18,7 @@ class RequestHandler {
     private String getFilename() throws IOException {
         String filename = null;
         String request = readRequest();
+        System.out.println(request);
         if(!request.isEmpty()){
             String requestMethod = request.split(" ")[0];
             if(requestMethod.equals("GET"))

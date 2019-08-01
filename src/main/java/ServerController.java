@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -10,11 +11,10 @@ class ServerController {
         serverController.startServer();
     }
     private void startServer() throws InterruptedException, ExecutionException, IOException {
-        server = new Server(10,"www",new ServerSocket(5000));
+        server = new Server(10,"www",new ServerSocket(80));
         while(server.getClientsConnected() <= server.getMaxConnections()) {
             Socket clientSocket = connectClient();
             String filename = getFilename(clientSocket);
-            //System.out.println(filename);
             sendResponse(clientSocket, server.getRootDirectory()+filename);
         }
     }
