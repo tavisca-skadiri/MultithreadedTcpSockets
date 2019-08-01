@@ -9,19 +9,22 @@ public class Connection extends Thread {
     Connection(Server server,Socket clientSocket) {
         this.server = server;
         this.clientSocket = clientSocket;
+        this.server.incrementConnectedClientsCount();
     }
     @Override
     public void run() {
         try {
             BufferedReader dataIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            RequestHandler requestHandler = new RequestHandler(dataIn);
-            String request = requestHandler.getResourceRequest();
-            PrintWriter dataOut = new PrintWriter(clientSocket.getOutputStream());
+            RequestParser requestParser = new RequestParser(dataIn);
+            RequestHeaderData requestHeader = requestParser.parseRequest();
 
-            ResponseHandler responseHandler = new ResponseHandler(dataOut,server.getRootDirectory()+request);
-            responseHandler.sendResponse();
+            String resourceName = requestHeader.getResourceName();
+
+            PrintWriter dataOut = new PrintWriter(clientSocket.getOutputStream());
+            ResponseSender responseSender = new ResponseSender(dataOut,server.getRootDirectory()+resourceName);
+            responseSender.sendResponse();
         }catch (Exception e) {
-            System.out.println(e.getMessage()+"inConnection");
+            e.printStackTrace();
         }
     }
 }
