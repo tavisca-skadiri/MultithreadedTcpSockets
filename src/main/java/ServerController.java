@@ -1,13 +1,14 @@
 import java.io.*;
 import java.net.Socket;
 class ServerController {
-    void startServer(Server server) throws IOException {
+    void startServer(Server server){
         while (server.getClientsConnected() <= server.getMaxConnections()) {
-            System.out.println("Server "+server.getServerNumber()+" listening...");
+            ServerLogger.infoLog("Server "+server.getServerNumber()+" listening...");
             Socket clientSocket = null;
             try {
                 clientSocket = server.getSocket().accept();
             } catch (IOException e) {
+                ServerLogger.warningLog("Client Connection error");
                 e.printStackTrace();
             }
             Connection connection = new Connection(server, clientSocket);

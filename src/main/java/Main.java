@@ -2,9 +2,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 public class Main {
     public static void main(String[] args){
-        int count=1;
-        startServerThread("html", 5000, count++);
-        startServerThread("www", 80, count++);
+        startServerThread("html", 5000, 1);
+        startServerThread("www", 80, 2);
     }
     private static void startServerThread(String rootDirectory, int port, int serverNumber) {
         ServerController serverController = new ServerController();

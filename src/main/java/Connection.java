@@ -18,6 +18,7 @@ public class Connection extends Thread {
             RequestHeaderData requestHeader = requestParser.parseRequest();
 
             String resourceName = requestHeader.getResourceName();
+            ServerLogger.infoLog("ResourceName: "+resourceName);
 
             PrintWriter dataOut = new PrintWriter(clientSocket.getOutputStream());
             ResponseSender responseSender = new ResponseSender(dataOut,server.getRootDirectory()+resourceName);
