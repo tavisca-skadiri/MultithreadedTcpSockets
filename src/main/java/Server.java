@@ -5,11 +5,13 @@ class Server {
     private String rootDirectory;
     private ServerSocket socket;
     private int clientsConnected;
-    Server(int maxConnections, String rootDirectory, ServerSocket socket) {
+    private int serverNumber;
+    Server(int maxConnections, String rootDirectory, ServerSocket socket, int serverNumber) {
         this.maxConnections = maxConnections;
         this.rootDirectory = rootDirectory;
         this.socket = socket;
         this.clientsConnected = 0;
+        this.serverNumber=serverNumber;
     }
     int getMaxConnections() {
         return maxConnections;
@@ -25,5 +27,8 @@ class Server {
     }
     void incrementConnectedClientsCount() {
         System.out.println("Client No." + ++clientsConnected + " connected...\n");
+    }
+    public int getServerNumber() {
+        return serverNumber;
     }
 }
