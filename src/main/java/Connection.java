@@ -1,3 +1,9 @@
+import models.RequestHeaderData;
+import models.Server;
+import request.RequestParser;
+import response.ResponseSender;
+import logs.ServerLogger;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -14,15 +20,13 @@ public class Connection extends Thread {
     public void run() {
         try {
             BufferedReader dataIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            RequestParser requestParser = new RequestParser(dataIn);
-            RequestHeaderData requestHeader = requestParser.parseRequest();
+            RequestHeaderData requestHeader = RequestParser.parseRequest(dataIn);
 
-            String resourceName = requestHeader.getResourceName();
-            ServerLogger.infoLog("ResourceName: "+resourceName);
+            String resourceName = server.getRootDirectory() + requestHeader.getResourceName();
+            ServerLogger.infoDisplay("ResourceName: "+resourceName);
 
             PrintWriter dataOut = new PrintWriter(clientSocket.getOutputStream());
-            ResponseSender responseSender = new ResponseSender(dataOut,server.getRootDirectory()+resourceName);
-            responseSender.sendResponse();
+            new ResponseSender(dataOut,resourceName).sendResponse();
         }catch (Exception e) {
             e.printStackTrace();
         }

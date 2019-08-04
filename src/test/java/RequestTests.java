@@ -1,4 +1,7 @@
+import models.RequestHeaderData;
 import org.junit.Test;
+import request.RequestParser;
+
 import java.io.*;
 import static org.junit.Assert.assertEquals;
 public class RequestTests {
@@ -23,8 +26,8 @@ public class RequestTests {
     @Test
     public void requestHeaderParser() throws IOException {
         String request = "GET /index.html /http/1.1 ";
-        RequestParser requestParser = new RequestParser(new BufferedReader(new StringReader(request)));
-        RequestHeaderData requestHeaderData = requestParser.parseRequest();
+        BufferedReader dataIn = new BufferedReader(new StringReader(request));
+        RequestHeaderData requestHeaderData = RequestParser.parseRequest(dataIn);
         assertEquals(new RequestHeaderData(request).toString(), requestHeaderData.toString());
     }
 }

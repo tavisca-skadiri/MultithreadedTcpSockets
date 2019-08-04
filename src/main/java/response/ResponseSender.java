@@ -1,20 +1,22 @@
+package response;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-class ResponseSender {
+public class ResponseSender {
     private final PrintWriter dataOut;
     private File file;
-    ResponseSender(PrintWriter dataOut, String filename) {
+    public ResponseSender(PrintWriter dataOut, String filename) {
         this.dataOut = dataOut;
         this.file = new File(filename);
     }
-    void sendResponse() throws IOException {
+    public void sendResponse() throws IOException {
         String fileContent = getResourceContent();
         dataOut.print(fileContent);
         dataOut.flush();
         dataOut.close();
     }
-    String getResourceContent() throws IOException {
+    public String getResourceContent() throws IOException {
         ResponseGenerator responseGenerator = new ResponseGenerator();
         String resourceContent;
         if(file.isDirectory())

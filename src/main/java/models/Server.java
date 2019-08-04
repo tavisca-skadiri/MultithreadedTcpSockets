@@ -1,33 +1,34 @@
+package models;
+
 import java.net.ServerSocket;
-class Server {
+public class Server {
     private int maxConnections;
     private String rootDirectory;
     private ServerSocket socket;
-    private int clientsConnected;
+    private static int clientsConnected = 0;
     private int serverNumber;
-    Server(int maxConnections, String rootDirectory, ServerSocket socket, int serverNumber) {
+    public Server(int maxConnections, String rootDirectory, ServerSocket socket, int serverNumber) {
         this.maxConnections = maxConnections;
         this.rootDirectory = rootDirectory;
         this.socket = socket;
-        this.clientsConnected = 0;
         this.serverNumber=serverNumber;
     }
-    int getMaxConnections() {
+    public int getMaxConnections() {
         return maxConnections;
     }
-    String getRootDirectory() {
+    public String getRootDirectory() {
         return rootDirectory;
     }
-    ServerSocket getSocket() {
+    public ServerSocket getSocket() {
         return socket;
     }
-    int getClientsConnected() {
+    public int getClientsConnected() {
         return clientsConnected;
-    }
-    void incrementConnectedClientsCount() {
-        System.out.println("Client No." + ++clientsConnected + " connected...\n");
     }
     public int getServerNumber() {
         return serverNumber;
+    }
+    public void incrementConnectedClientsCount() {
+        System.out.println("Client No." + ++clientsConnected + " connected...\n");
     }
 }
